@@ -1,0 +1,32 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "Week 10 HW (OSU Full-Stack Bootcamp)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "tests": "_tests_"
+  },
+  "scripts": {
+    "start": "node index",
+    "watch": "nodemon index",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Youngin9210/TeamProfile-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Youngin9210/TeamProfile-Generator/issues"
+  },
+  "homepage": "https://github.com/Youngin9210/TeamProfile-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
