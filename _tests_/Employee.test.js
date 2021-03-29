@@ -1,7 +1,11 @@
 const Employee = require("../lib/Employee");
 const employee = new Employee("Zoe", 1, "zoe@email.com");
 
-describe("Employee", () => {});
+describe("Employee", () => {
+  it("Validates that the user input is formatted as an object", () => {
+    expect(typeof employee).toBe("object");
+  });
+});
 describe("Employee name", () => {
   it("Returns the employee's name when a new employee is added", () => {
     expect(employee.getName()).toBe("Zoe");
