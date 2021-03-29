@@ -151,11 +151,26 @@ const internRole = [
     },
   },
 ];
+
 const addEngineer = () => {
   inquirer
     .prompt(engineerRole)
     .then((data) => {
-      EngineerTemplate(data);
+      // EngineerTemplate(data);
+      console.log(data);
+    })
+    .then(() => {
+      addEmployee();
+    });
+};
+
+const addIntern = () => {
+  inquirer
+    .prompt(internRole)
+    .then((data) => {
+      // InternTemplate(data);
+
+      console.log(data);
     })
     .then(() => {
       addEmployee();
@@ -196,19 +211,15 @@ const addEmployee = () => {
           return employeeRole();
           break;
         case "no":
-          return generateHtml(); // add function to generateHtml.js
+          // return generateHtml(); // add function to generateHtml.js
+          console.log("generateHtml");
           break;
       }
     });
 };
 
-const addTeam = (data) => {
-  inquirer.prompt(teamManager).then((data) => {
-    const { managerName, managerID, managerEmail, managerOffice } = data;
-    addEmployee();
-  });
+const init = () => {
+  addEmployee();
 };
 
-// const init = () => {
-// 	addEmployee()
-// }
+init();
