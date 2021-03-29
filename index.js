@@ -1,13 +1,13 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const Manager = require("Manager");
-const Engineer = require("Engineer");
-const Intern = require("Intern");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 
-const generateHtml = require("./src/generateHtml");
-const ManagerTemplete = require("./src/ManagerTemplate");
-const EngineerTemplete = require("./src/EngineerTemplate");
-const InternTemplete = require("./src/InternTemplate");
+// const generateHtml = require("./src/generateHtml");
+// const ManagerTemplete = require("./src/ManagerTemplate");
+// const EngineerTemplete = require("./src/EngineerTemplate");
+// const InternTemplete = require("./src/InternTemplate");
 
 const teamManager = [
   {
@@ -179,18 +179,18 @@ const addIntern = () => {
 
 const employeeRole = () => {
   return inquirer
-    .promnpt([
+    .prompt([
       {
         type: "list",
         name: "role",
         message:
           "What is the role of the new employee that you would like to add?",
-        choices: ["engineer", "intern"],
+        choices: ["Engineer", "Intern"],
       },
     ])
     .then((data) => {
-      const { role } = answers;
-      return role === engineer ? addEngineer() : addIntern();
+      const { role } = data;
+      return role === "Engineer" ? addEngineer() : addIntern();
     });
 };
 
@@ -218,8 +218,14 @@ const addEmployee = () => {
     });
 };
 
+const addTeam = (data) => {
+  inquirer.prompt(teamManager).then((data) => {
+    addEmployee();
+  });
+};
+
 const init = () => {
-  addEmployee();
+  addTeam();
 };
 
 init();
