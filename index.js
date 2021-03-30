@@ -9,6 +9,8 @@ const Intern = require("./lib/Intern");
 // const EngineerTemplete = require("./src/EngineerTemplate");
 // const InternTemplete = require("./src/InternTemplate");
 
+const employees = [];
+
 const teamManager = [
   {
     type: "input",
@@ -157,7 +159,15 @@ const addEngineer = () => {
     .prompt(engineerRole)
     .then((data) => {
       // EngineerTemplate(data);
-      console.log(data);
+      const { engineerName, engineerID, engineerEmail, engineerGithub } = data;
+      const newEmployee = new Engineer(
+        engineerName,
+        engineerID,
+        engineerEmail,
+        engineerGithub
+      );
+      employees.push(newEmployee);
+      console.log(employees);
     })
     .then(() => {
       addEmployee();
@@ -169,8 +179,15 @@ const addIntern = () => {
     .prompt(internRole)
     .then((data) => {
       // InternTemplate(data);
-
-      console.log(data);
+      const { internName, internID, internEmail, internSchool } = data;
+      const newEmployee = new Intern(
+        internName,
+        internID,
+        internEmail,
+        internSchool
+      );
+      employees.push(newEmployee);
+      console.log(employees);
     })
     .then(() => {
       addEmployee();
@@ -206,20 +223,29 @@ const addEmployee = () => {
     ])
     .then((data) => {
       const { addMore } = data;
-      switch (addMore) {
-        case "yes":
-          return employeeRole();
-          break;
-        case "no":
-          // return generateHtml(); // add function to generateHtml.js
-          console.log("generateHtml");
-          break;
-      }
+      // switch (addMore) {
+      //   case "yes":
+      //     return employeeRole();
+      //     break;
+      //   case "no":
+      //     // return generateHtml(); // add function to generateHtml.js
+      //     console.log(employees);
+      //     break;
+      // }
+      return addMore === "yes" ? employeeRole() : console.log(employees);
     });
 };
 
 const addTeam = (data) => {
   inquirer.prompt(teamManager).then((data) => {
+    const { managerName, managerID, managerEmail, managerOffice } = data;
+    const newEmployee = new Manager(
+      managerName,
+      managerID,
+      managerEmail,
+      managerOffice
+    );
+    employees.push(newEmployee);
     addEmployee();
   });
 };
