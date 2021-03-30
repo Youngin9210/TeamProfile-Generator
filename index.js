@@ -4,7 +4,8 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
-// const generateHtml = require("./src/generateHtml");
+// const generateHeader = require("./src/generateHeader");
+// const generateFooter = require("./src/generateFooter");
 // const ManagerTemplete = require("./src/ManagerTemplate");
 // const EngineerTemplete = require("./src/EngineerTemplate");
 // const InternTemplete = require("./src/InternTemplate");
@@ -223,15 +224,6 @@ const addEmployee = () => {
     ])
     .then((data) => {
       const { addMore } = data;
-      // switch (addMore) {
-      //   case "yes":
-      //     return employeeRole();
-      //     break;
-      //   case "no":
-      //     // return generateHtml(); // add function to generateHtml.js
-      //     console.log(employees);
-      //     break;
-      // }
       return addMore === "yes" ? employeeRole() : console.log(employees);
     });
 };
