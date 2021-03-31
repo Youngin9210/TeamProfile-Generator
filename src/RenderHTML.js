@@ -54,3 +54,5 @@ class RenderHTML {
 			`;
   }
 }
+
+module.exports = RenderHTML;

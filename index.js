@@ -4,11 +4,8 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
-// const generateHeader = require("./src/generateHeader");
-// const generateFooter = require("./src/generateFooter");
-// const ManagerTemplete = require("./src/ManagerTemplate");
-// const EngineerTemplete = require("./src/EngineerTemplate");
-// const InternTemplete = require("./src/InternTemplate");
+const RenderHTML = require("./src/RenderHTML");
+const RenderEmployee = require("./src/RenderEmployee");
 
 const employees = [];
 
@@ -167,7 +164,8 @@ const addEngineer = () => {
         engineerEmail,
         engineerGithub
       );
-      employees.push(newEmployee);
+      const newEngineer = new RenderEmployee(newEmployee).renderEngineer();
+      employees.push(newEngineer);
       console.log(employees);
     })
     .then(() => {
@@ -187,7 +185,8 @@ const addIntern = () => {
         internEmail,
         internSchool
       );
-      employees.push(newEmployee);
+      const newIntern = new RenderEmployee(newEmployee).renderIntern();
+      employees.push(newIntern);
       console.log(employees);
     })
     .then(() => {
@@ -224,26 +223,38 @@ const addEmployee = () => {
     ])
     .then((data) => {
       const { addMore } = data;
-      return addMore === "yes" ? employeeRole() : console.log(employees);
+      return addMore === "yes"
+        ? employeeRole()
+        : fs.writeFile("./dist/team.html", RenderHTML(employees), (err) => {
+            if (err) throw err;
+            // logging success when completed if successful
+            console.log("Success! Your README.md file has been created!");
+          });
     });
 };
 
-const addTeam = (data) => {
-  inquirer.prompt(teamManager).then((data) => {
-    const { managerName, managerID, managerEmail, managerOffice } = data;
-    const newEmployee = new Manager(
-      managerName,
-      managerID,
-      managerEmail,
-      managerOffice
-    );
-    employees.push(newEmployee);
-    addEmployee();
-  });
+const addManager = (data) => {
+  inquirer
+    .prompt(teamManager)
+    .then((data) => {
+      const { managerName, managerID, managerEmail, managerOffice } = data;
+      const newEmployee = new Manager(
+        managerName,
+        managerID,
+        managerEmail,
+        managerOffice
+      );
+      const newManager = new RenderEmployee(newEmployee).renderManager();
+      employees.push(newManager);
+      console.log(employees);
+    })
+    .then(() => {
+      addEmployee();
+    });
 };
 
 const init = () => {
-  addTeam();
+  addManager();
 };
 
 init();
