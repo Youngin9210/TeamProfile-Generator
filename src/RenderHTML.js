@@ -2,11 +2,7 @@ class RenderHTML {
   constructor(employees) {
     this.employees = employees;
   }
-  printTeam() {
-    for (const e in this.employees) {
-      return e;
-    }
-  }
+
   renderTeam() {
     return `
 		<!DOCTYPE html>
@@ -23,8 +19,18 @@ class RenderHTML {
 					integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
 					crossorigin="anonymous"
 				/>
-				<!-- style.css -->
-				<link rel="stylesheet" type="text/css" href="style.css" />
+				<!-- inline style -->
+				<style>
+				.employeeCard {
+					margin: 1rem;
+					box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.7);
+					border: none;
+					border-radius: 5px;
+				}
+				.card-body {
+					border-radius: 5px 5px 0 0;
+				}
+			</style>
 				<!-- Font Awesome -->
 				<script
 					src="https://kit.fontawesome.com/7db05eeb30.js"
@@ -42,7 +48,7 @@ class RenderHTML {
 				<main
 					class="container-fluid d-flex flex-wrap justify-content-center align-items-center col-7"
 				>
-					${printTeam()}
+					${this.employees.join("")}
 				</main>
 				<script
 					src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
@@ -50,8 +56,7 @@ class RenderHTML {
 					crossorigin="anonymous"
 				></script>
 			</body>
-		</html>
-			`;
+		</html>`;
   }
 }
 
