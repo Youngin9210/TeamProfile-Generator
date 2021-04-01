@@ -223,13 +223,21 @@ const addEmployee = () => {
     ])
     .then((data) => {
       const { addMore } = data;
-      return addMore === "yes"
-        ? employeeRole()
-        : fs.writeFile("./dist/team.html", RenderHTML(employees), (err) => {
+
+      switch (addMore) {
+        case "yes":
+          employeeRole();
+          break;
+        case "no":
+          const team = new RenderHTML(employees);
+          // team.printTeam();
+          fs.writeFile("./dist/team.html", team.renderTeam(), (err) => {
             if (err) throw err;
             // logging success when completed if successful
-            console.log("Success! Your README.md file has been created!");
+            console.log("Success! Your team.html file has been created!");
           });
+          break;
+      }
     });
 };
 
