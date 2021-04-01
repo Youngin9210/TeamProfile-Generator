@@ -42,7 +42,7 @@ class RenderEmployee {
 								<li class="list-group-item">
 									Email: <a href="mailto:${e.getEmail()}">${e.getEmail()}</a>
 								</li>
-								<li class="list-group-item">Office #: ${e.getGithub()}</li>
+								<li class="list-group-item">GitHub: <a href="https://github.com/${e.getGithub()}">${e.getGithub()}</a></li>
 							</ul>
 						</div>
 					</div>

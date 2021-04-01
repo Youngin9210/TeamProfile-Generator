@@ -166,7 +166,6 @@ const addEngineer = () => {
       );
       const newEngineer = new RenderEmployee(newEmployee).renderEngineer();
       employees.push(newEngineer);
-      console.log(employees);
     })
     .then(() => {
       addEmployee();
@@ -187,7 +186,6 @@ const addIntern = () => {
       );
       const newIntern = new RenderEmployee(newEmployee).renderIntern();
       employees.push(newIntern);
-      console.log(employees);
     })
     .then(() => {
       addEmployee();
@@ -234,7 +232,9 @@ const addEmployee = () => {
           fs.writeFile("./dist/team.html", team.renderTeam(), (err) => {
             if (err) throw err;
             // logging success when completed if successful
-            console.log("Success! Your team.html file has been created!");
+            console.log(
+              "Success! Your team.html file has been created and stored in the 'dist' directory!"
+            );
           });
           break;
       }
@@ -254,7 +254,6 @@ const addManager = (data) => {
       );
       const newManager = new RenderEmployee(newEmployee).renderManager();
       employees.push(newManager);
-      console.log(employees);
     })
     .then(() => {
       addEmployee();
