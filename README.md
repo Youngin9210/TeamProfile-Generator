@@ -9,7 +9,7 @@ Week 10 HW (OSU Full-Stack Bootcamp)
 
 ## Description
 
-Using test driven development, this app utilizes Javascript along with NodeJS and npm Inquirer to prompt the user in the command line to gather information. This information is then used to generate a team profile page using HTML, CSS, and Bootstrap.
+Using test driven development, this app utilizes Javascript along with NodeJS and npm Inquirer and Jest packages to prompt the user in the command line to gather information. This information is then used to generate a team profile page using HTML, CSS, and Bootstrap.
 
 #### Technologies Used
 
