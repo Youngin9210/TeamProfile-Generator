@@ -32,6 +32,10 @@ Using test driven development, this app utilizes Javascript along with NodeJS an
 
 ## Screenshots
 
+Run 'npm test' or 'npm run test' to test
+
+![image](assets/images/test.png)
+
 Run 'npm start' to initiate the app with prompts
 
 ![image](assets/images/npmStart.png)
@@ -54,7 +58,7 @@ Intern prompts with 'Success!' message when finished
 
 If you would like to see a video of how the ReadMe-Generator works then click the link below
 
-[How to video](https://drive.google.com/file/d/1MRTMD_sLVMWP1SOXn1e8swccoh0zE1QM/view)
+[How to video](https://drive.google.com/file/d/1AtJozsk7dj2otHj6YZWFEHWoYg4A0cN-/view)
 
 ## Installation
 
