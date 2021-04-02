@@ -1,12 +1,18 @@
+// including Intern class
 const Intern = require("../lib/Intern");
 
+// RenderEmployee class to render employee html
 class RenderEmployee {
+  // passing through an argument
   constructor(data) {
     this.data = data;
   }
 
+  // renderManager method to create manager html
   renderManager() {
+    // setting data argument into a variable
     let m = this.data;
+    // returning html structure using methods from data argument
     return `
 	<!-- Manager Template -->
 	<div class="card employeeCard" style="width: 18rem">
@@ -27,8 +33,11 @@ class RenderEmployee {
 	`;
   }
 
+  // renderManager method to create manager html
   renderEngineer() {
+    // setting data argument into a variable
     let e = this.data;
+    // returning html structure using methods from data argument
     return `
 	<!-- Engineer Template -->
 	<div class="card employeeCard" style="width: 18rem">
@@ -49,8 +58,11 @@ class RenderEmployee {
 	`;
   }
 
+  // renderManager method to create manager html
   renderIntern() {
+    // setting data argument into a variable
     let i = this.data;
+    // returning html structure using methods from data argument
     return `
   <!-- Intern Template -->
   <div class="card employeeCard" style="width: 18rem">

@@ -1,9 +1,13 @@
+// constructor class to render the final html for the team.html file
 class RenderHTML {
+  // constructor passing through an argument
   constructor(employees) {
     this.employees = employees;
   }
 
+  // renderTeam method used to create html structure
   renderTeam() {
+    // returning html structure and inserting the employees array by using the join() method
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
