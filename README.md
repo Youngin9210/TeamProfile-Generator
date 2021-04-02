@@ -56,7 +56,7 @@ Intern prompts with 'Success!' message when finished
 
 ![image](assets/images/internFinal.png)
 
-If you would like to see a video of how the ReadMe-Generator works then click the link below
+If you would like to see a video of how it works then click the link below
 
 [How to video](https://drive.google.com/file/d/1AtJozsk7dj2otHj6YZWFEHWoYg4A0cN-/view)
 
