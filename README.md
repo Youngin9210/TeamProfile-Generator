@@ -9,11 +9,15 @@ Week 10 HW (OSU Full-Stack Bootcamp)
 
 ## Description
 
+Utilizing Javascript along with NodeJS and npm Inquirer, this application prompts the user in the command line to gather information. This information is then used to generate a team profile page using HTML, CSS, and Bootstrap.
+
 #### Technologies Used
 
     - Javascript
     - NodeJS
     - npm Inquirer
+    - HTML & inline CSS generated via Javascript
+    - Bootstrap within generated HTML
 
 ## Table of Contents
 
@@ -27,18 +31,23 @@ Week 10 HW (OSU Full-Stack Bootcamp)
 ## Screenshots
 
 Run 'npm start' to initiate the app with prompts
+
 ![image](assets/images/npmStart.png)
 
 Manager prompts
+
 ![image](assets/images/manager.png)
 
 Choose a role after choosing 'yes' to adding a new employee
+
 ![image](assets/images/role.png)
 
 Engineer prompts
+
 ![image](assets/images/engineer.png)
 
 Intern prompts with 'Success!' message when finished
+
 ![image](assets/images/internFinal.png)
 
 If you would like to see a video of how the ReadMe-Generator works then click the link below
