@@ -15,7 +15,9 @@ Using test driven development, this app utilizes Javascript along with NodeJS an
 
     - Javascript
     - NodeJS
-    - npm Inquirer
+    - npm
+    - Inquirer package
+    - Jest package
     - HTML & inline CSS generated via Javascript
     - Bootstrap within generated HTML
 
